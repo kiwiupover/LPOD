@@ -17,7 +17,7 @@ class LandingPage < ActiveRecord::Base
   after_create :landing_page_thumbnails, :calendar_dates 
 
   #added a tiny bit of error checking, so we can leave this active and see how it goes
-  after_update :get_cpc
+  # after_update :get_cpc 
 
   #to use in home page, don't get stuff that shouldnt be released yet
   scope :not_future, where("release_date < ?", Time.zone.now.to_date + 1.day)
@@ -31,6 +31,13 @@ class LandingPage < ActiveRecord::Base
   scope :next, lambda { |current| where('release_date > ?', current).order("release_date ASC")} 
 
   # default_scope :order => 'created_at DESC' 
+  
+  extend FriendlyId
+  friendly_id :title, use: [:slugged, :history ]
+  
+  def should_generate_new_friendly_id?
+    new_record?
+  end
   
   def self.industry_id(industry_id)
     where(:industry_id => industry_id)
@@ -73,23 +80,27 @@ class LandingPage < ActiveRecord::Base
     file = kit.to_file(path)  
     self.screen_shot = File.open(path) 
     self.score = 0
-    self.save! 
+    self.save!   
   end 
+  handle_asynchronously :landing_page_thumbnails
   
   def calendar_dates
     date = self.release_date
   end
-
-  def get_cpc
-    keyword2 = self.keyword.gsub(" ","+")
-    url = "http://www.keywordspy.com/research/search.aspx?q=#{keyword2}&type=keywords"
-    #url = "http://www.semrush.com/search.php?q=#{keyword}&db=us"
-    doc = Nokogiri::HTML(open(url))
-    cpc = doc.at_css(".alter:nth-child(2) td:nth-child(2)").text if doc.at_css(".alter:nth-child(2) td:nth-child(2)")
-    #cpc = doc.at_css("#container_url_01").text
-    #self.update_attribute(:keyword_cpc, cpc)
-    self.keyword_cpc = cpc
-    self.save
-  end
-
+  
+  # Need to setup Tests  
+  # def get_cpc
+  #   keyword2 = self.keyword.gsub(" ","+")
+  #   url = "http://www.keywordspy.com/research/search.aspx?q=#{keyword2}&type=keywords"
+  #   #url = "http://www.semrush.com/search.php?q=#{keyword}&db=us"
+  #   doc = Nokogiri::HTML(open(url)) 
+  #   if doc.none?
+  #     cpc = doc.at_css(".alter:nth-child(2) td:nth-child(2)").text if doc.at_css(".alter:nth-child(2) td:nth-child(2)")
+  #     #cpc = doc.at_css("#container_url_01").text
+  #     #self.update_attribute(:keyword_cpc, cpc)
+  #     self.keyword_cpc = cpc
+  #     self.save
+  #   end  
+  # end 
+  
 end

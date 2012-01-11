@@ -28,7 +28,11 @@ gem 'event-calendar', :require => 'event_calendar'
 gem 'nokogiri'
 gem 'mechanize'
 
-gem 'will_paginate', '~> 3.0'
+gem 'will_paginate', '~> 3.0' 
+gem "friendly_id", "~> 4.0.0"
+
+gem 'delayed_job_active_record'              
+gem 'daemons'
 
 group :production do
   gem 'pg'
@@ -54,4 +58,7 @@ end
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
+  gem 'minitest' 
+  gem 'rspec'
+  gem 'autotest'
 end

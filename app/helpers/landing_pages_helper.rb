@@ -18,4 +18,15 @@ module LandingPagesHelper
       end
     end
   end
+  
+  def lp_thumbs(category, prev_lp, next_lp)
+    if prev_lp || next_lp
+     @output = content_tag(:h4, "<span>More:</span> #{category.name} Pages".html_safe , :class => "more")
+     @output << tag(:ul, :class => "block-grid two-up")
+     @output << sidebar_lp(prev_lp)
+     @output << sidebar_lp(next_lp)
+     @output << "</ul>".html_safe
+    end
+  end
+ 
 end

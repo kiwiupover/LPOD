@@ -11,7 +11,7 @@
     <h2>
       <%= link_to "#{@landing_page.title}", @landing_page.url %>
     </h2>
-    <div class="inpad bigbox">
+    <div class="row inpad bigbox">
       <%= image_tag @landing_page.screen_shot.url.to_s, :class => "border" %> 
       <ul class="details right pad-top">
         <li>
@@ -23,19 +23,12 @@
   </div>
   <div class="columns three sidebar">
     <%= render "advert" %>
-    <h4><span>More: </span><%= @landing_page.industry.name %></h4>
-    <ul class="block-grid two-up">
-      <%= sidebar_lp(@lp_industry_prev) %>                                                                                                            
-      <%= sidebar_lp(@lp_industry_next) %>
-    </ul>
-    <h4><span>More: </span><%= @landing_page.landing_page_type.name %></h4>
-    <ul class="block-grid two-up">
-      <%= sidebar_lp(@lp_type_prev) %>                                                                                                            
-      <%= sidebar_lp(@lp_type_next) %>
-    </ul>
-    <p>
-      <%= @landing_page.description %>
-    </p> 
+    
+    <%= lp_thumbs(@landing_page.industry, @lp_industry_prev, @lp_industry_next ) %>
+    <%= lp_thumbs(@landing_page.landing_page_type, @lp_type_prev, @lp_type_next ) %>
+ 
+    <p><%= @landing_page.description %></p> 
+    
     <div class="clear">
        <%= link_to 'Edit', edit_landing_page_path(@landing_page) %> |
        <%= link_to 'Back', landing_pages_path %>

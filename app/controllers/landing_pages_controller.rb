@@ -8,6 +8,10 @@ class LandingPagesController < ApplicationController
 
   def show
     @landing_page = LandingPage.find(params[:id])
+    if request.path != landing_page_path(@landing_page)
+      redirect_to @landing_page, status: :moved_permanently
+    end
+    
     @lp_industry_next = LandingPage.industry_id(@landing_page.industry_id).next(@landing_page.release_date).first
     @lp_industry_prev = LandingPage.industry_id(@landing_page.industry_id).prev(@landing_page.release_date).first
     
