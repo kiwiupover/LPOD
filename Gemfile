@@ -55,10 +55,11 @@ end
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
+gem "rspec-rails", :group => [:test, :development]
 group :test do
-  # Pretty printed test output
-  gem 'turn', :require => false
-  gem 'minitest' 
-  gem 'rspec'
-  gem 'autotest'
+  gem "factory_girl_rails"
+  gem "capybara"
+  gem "guard-rspec"
+  gem "spork", "> 0.9.0.rc"
+  gem "guard-spork"
 end

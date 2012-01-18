@@ -29,8 +29,6 @@ class LandingPage < ActiveRecord::Base
   scope :prev, lambda { |current| where('release_date < ?', current).order("release_date DESC")}
   
   scope :next, lambda { |current| where('release_date > ?', current).order("release_date ASC")} 
-
-  # default_scope :order => 'created_at DESC' 
   
   extend FriendlyId
   friendly_id :title, use: [:slugged, :history ]
@@ -47,8 +45,8 @@ class LandingPage < ActiveRecord::Base
     where(:landing_page_type_id => landing_page_type)
   end
   
-  def self.prev_next(current)
-    where('id < ?', current).limit(1)
+  def self.prev_next(current_page)
+    where('id < ?', current_page).limit(1)
   end 
  
   def update_score
@@ -87,6 +85,7 @@ class LandingPage < ActiveRecord::Base
   def calendar_dates
     date = self.release_date
   end
+ 
   
   # Need to setup Tests  
   # def get_cpc

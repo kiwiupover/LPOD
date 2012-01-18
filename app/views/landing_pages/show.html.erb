@@ -18,6 +18,11 @@
           <%= @landing_page.keyword unless @landing_page.keyword.nil? %>
           <%= @landing_page.keyword_cpc unless @landing_page.keyword_cpc.nil? %>
         </li>
+        <li>
+          <%= link_to({:controller => "landing_pages", :action => "vote", :id => @landing_page}, :class => "vote add", :remote => true) do %>
+            <%= @landing_page.score %>
+           <% end %>
+        </li>
       </ul>
     </div>
   </div>

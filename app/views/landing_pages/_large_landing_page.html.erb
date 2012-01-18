@@ -10,7 +10,7 @@
         <span>Cost Per Click: </span> <%= landing_page.keyword_cpc unless landing_page.keyword_cpc.nil? %>
       </li>
       <li>
-        <%= link_to({:controller => "landing_pages", :action => "vote", :id => landing_page}, :class => "thumbs-up add", :remote => true) do %>
+        <%= link_to({:controller => "landing_pages", :action => "vote", :id => landing_page}, :class => "vote add", :remote => true) do %>
           Thumbs Up: <span><%= landing_page.score %></span>
          <% end %>
       </li>

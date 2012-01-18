@@ -60,8 +60,22 @@ ActiveRecord::Schema.define(:version => 20120111064040) do
     t.datetime "updated_at"
   end
 
-# Could not dump table "landing_pages" because of following StandardError
-#   Unknown type 'sting' for column 'title'
+  create_table "landing_pages", :force => true do |t|
+    t.string   "url"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "screen_shot"
+    t.string   "title",                :limit => nil
+    t.integer  "landing_page_type_id"
+    t.integer  "industry_id"
+    t.string   "description"
+    t.date     "release_date"
+    t.integer  "score"
+    t.string   "keyword"
+    t.string   "keyword_cpc"
+    t.string   "slug"
+  end
 
   create_table "votes", :force => true do |t|
     t.integer  "value"

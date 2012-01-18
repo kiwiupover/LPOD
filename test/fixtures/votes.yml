@@ -1,6 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
+one: 
   value: 1
   landing_page_id: 1
   ip: MyString

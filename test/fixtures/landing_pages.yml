@@ -1,9 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  url: MyString
+  title: MyTitle
+  url: http://dave.com
+  keyword: Mykeyword
   content: MyText
+  industry_id: 1
+  landing_page_type_id: 1
+  release_date: 2011-01-12
 
 two:
+  title: MyTitle
   url: MyString
+  keyword: Mykeyword
   content: MyText
+  industry_id: 1
+  landing_page_type_id: 1
+  release_date: 2011-01-12

@@ -2,7 +2,7 @@ class LandingPagesController < ApplicationController
   respond_to :html, :json, :js
   
   def index  
-    @landing_pages = LandingPage.not_future.page(params[:page]).per_page(lp_per_page).default
+    @landing_pages = LandingPage.not_future.page(params[:page]).per_page(8).default
     @sidebar = sidebar(nil,nil)
   end
 
@@ -92,11 +92,9 @@ class LandingPagesController < ApplicationController
   end
 private
   
-  def lp_per_page
+  def page_one
     if (params[:page].nil? || params[:page] <= "1") 
-      9
-    else
-      8
+      true
     end
   end
   

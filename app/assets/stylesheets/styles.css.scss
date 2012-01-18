@@ -64,10 +64,10 @@ body {
 	height:70px;
 	background:url(bg-head.jpg) left bottom;
 	h1{
-		margin:15px 0 0;
-		height:43px;
-		text-indent:-9999px;
-		background:url(logo.png) no-repeat;
+    background: url("logo.png") no-repeat scroll 0 0 transparent;
+    height: 62px;
+    margin: 5px 0 0;
+    text-indent: -9999px;
 		a {
 			height:43px;
 			width:337px;
@@ -121,11 +121,16 @@ nav#head {
 		padding:6px 0 0;
 		color:#681408;
 	}
+	h4 {
+		float:left;
+		padding-top:5px;}
 	ul.details{
 		margin-bottom:0;
+		padding-top:5px;
 		li {
 			float:left;
-			padding-left:10px;}
+			padding-left:10px;
+			margin-bottom:0;}
 	}
 } 
 .smallbox .date{width:130px;top:40px;left:-6px;}
@@ -142,7 +147,10 @@ img.border {
 	@include shadow();
 } 
 .sidebar {
-	h4 {padding-top:20px;font-size:16px;font-weight:900;font-style:italic;}
+	h4 {
+		padding-top:20px;font-size:16px;font-weight:900;font-style:italic;
+		span {font-style:italic;font-weight:400;}
+	}
 }
 .addbox {
 	background:#efefef;

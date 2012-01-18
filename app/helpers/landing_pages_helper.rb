@@ -7,8 +7,29 @@ module LandingPagesHelper
     end
   end
   
+  def page_one?
+    if (params[:page].nil? || params[:page] <= "1") 
+      true 
+    end
+  end
+  
   def format_date(date, format = :rfc822 )
-    date.to_date().to_formatted_s(format)
+    content_tag :div, :class => 'date' do
+      date.to_date().to_formatted_s(format)
+    end unless date.nil?
+  end
+  
+  def cost_per_click(keyword_cpc)
+    content_tag :li do
+      @output = content_tag :span, "Cost Per Click:"
+      @output << keyword_cpc
+    end unless keyword_cpc.nil?
+  end
+  
+  def like_button(landing_page)
+    content_tag :li do
+      link_to landing_page.score, {:controller => "landing_pages", :action => "vote", :id => landing_page}, :class => "vote add", :remote => true
+    end
   end
   
   def sidebar_lp(page)
