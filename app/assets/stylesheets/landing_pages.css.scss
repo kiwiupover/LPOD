@@ -37,4 +37,10 @@ ul.ui-autocomplete {
 	&.add {
 		background-position:0 bottom;
 	}
+} 
+li.details {
+	font-style:italic;
+	font-weight:bold;
+	span {
+	 font-weight:normal;}
 }

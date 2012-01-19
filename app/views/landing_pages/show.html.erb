@@ -12,7 +12,7 @@
       <%= link_to "#{@landing_page.title}", @landing_page.url %>
     </h2>
     <div class="row inpad bigbox">
-      <%= image_tag @landing_page.screen_shot.url.to_s, :class => "border" %> 
+      <%= link_to image_tag(@landing_page.screen_shot.bigthumb.url, :class => "border"), @landing_page.screen_shot.url, :title => @landing_page.title, :class => "lightbox" %>
       <ul class="details right pad-top">
         <li>
           <%= @landing_page.keyword unless @landing_page.keyword.nil? %>

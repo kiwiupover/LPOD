@@ -5,9 +5,10 @@
         <div class="row pad-bot">
           <div class="twelve inpad bigbox">
             <%= format_date(landing_page.release_date) %>
-            <%= link_to image_tag(landing_page.screen_shot.bigthumb.url, :class => "border"), landing_page.screen_shot.url, :title => landing_page.title %>
+            <%= image_tag(landing_page.screen_shot.bigthumb.url, :class => "border") %>
             <h3 class="pad-top-half left"><%= link_to landing_page.title, landing_page %></h3>
             <ul class="details right pad-top">
+              <%= keyword(landing_page.keyword) %>
               <%= cost_per_click(landing_page.keyword_cpc) %>
               <%= like_button(landing_page) %>
             </ul>
