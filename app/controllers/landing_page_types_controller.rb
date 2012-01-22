@@ -14,6 +14,8 @@ class LandingPageTypesController < ApplicationController
   # GET /landing_page_types/1.json
   def show
     @landing_page_type = LandingPageType.find(params[:id])
+    @landing_pages = LandingPage.where(:landing_page_type_id => @landing_page_type).page(params[:page]).per_page(8).default
+    @sidebar = sidebar(nil,nil) 
 
     respond_to do |format|
       format.html # show.html.erb

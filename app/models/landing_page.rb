@@ -31,7 +31,7 @@ class LandingPage < ActiveRecord::Base
   scope :next, lambda { |current| where('release_date > ?', current).order("release_date ASC")} 
   
   extend FriendlyId
-  friendly_id :title, use: [:slugged, :history ]
+  friendly_id :title, use: :slugged
   
   def should_generate_new_friendly_id?
     new_record?

@@ -19,7 +19,7 @@ jQuery ->
 		buttons: 
 			position: 'top'
 	$(".sidebar li.left, .sidebar li.right").hover (->
-	  $(this).children().children(".arrow").show()
+	  $(this).children().children(".arrow").fadeIn()
 	), ->
 	  $(this).children().children(".arrow").hide()
 						

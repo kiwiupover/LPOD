@@ -13,8 +13,10 @@ class IndustriesController < ApplicationController
   # GET /industries/1
   # GET /industries/1.json
   def show
-    @industry = LandingPage.where(:industry_id => params[:id]).default
-
+    @industry = Industry.find(params[:id])
+    @landing_pages = LandingPage.where(:industry_id => @industry).page(params[:page]).per_page(8).default
+    @sidebar = sidebar(nil,nil) 
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @industry }
@@ -79,5 +81,6 @@ class IndustriesController < ApplicationController
       format.html { redirect_to industries_url }
       format.json { head :ok }
     end
-  end
+  end 
+  
 end

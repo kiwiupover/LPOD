@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120111064040) do
+ActiveRecord::Schema.define(:version => 20120122082613) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -52,13 +52,19 @@ ActiveRecord::Schema.define(:version => 20120111064040) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
+
+  add_index "industries", ["slug"], :name => "index_industries_on_slug"
 
   create_table "landing_page_types", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
+
+  add_index "landing_page_types", ["slug"], :name => "index_landing_page_types_on_slug"
 
   create_table "landing_pages", :force => true do |t|
     t.string   "url"

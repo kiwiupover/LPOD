@@ -1,3 +1,10 @@
 class LandingPageType < ActiveRecord::Base
-  has_many :landing_pages
+  has_many :landing_pages 
+  
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+   
+  def should_generate_new_friendly_id?
+    new_record?
+  end
 end
