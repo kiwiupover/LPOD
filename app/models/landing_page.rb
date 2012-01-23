@@ -3,18 +3,15 @@ class LandingPage < ActiveRecord::Base
   belongs_to  :industry
   has_many    :votes 
   
-  has_event_calendar :start_at_field  => 'release_date', :end_at_field => 'release_date'   
-   
-  validates :title,  :presence => true
-  validates :url,  :presence => true, :uniqueness => true
-  validates :keyword,  :presence => true 
-  validates :industry_name,  :presence => true
-  validates :landing_page_type_name, :presence => true
-  # validates :release_date, :presence => true, :uniqueness => true
+  format_url :url
+  
+  has_event_calendar :start_at_field  => 'release_date', :end_at_field => 'release_date'    
+  validates_presence_of :title, :url, :release_date, :keyword, :industry_name, :landing_page_type_name
+  validates_uniqueness_of :url, :release_date
   
   mount_uploader :screen_shot, ScreenshotUploader
   
-  after_create :landing_page_thumbnails, :calendar_dates 
+  after_create :landing_page_thumbnails, :calendar_dates, :add_html 
 
   #added a tiny bit of error checking, so we can leave this active and see how it goes
   # after_update :get_cpc 
@@ -31,6 +28,7 @@ class LandingPage < ActiveRecord::Base
   scope :next, lambda { |current| where('release_date > ?', current).order("release_date ASC")} 
   
   extend FriendlyId
+
   friendly_id :title, use: :slugged
   
   def should_generate_new_friendly_id?
@@ -81,6 +79,12 @@ class LandingPage < ActiveRecord::Base
     self.save!   
   end 
   handle_asynchronously :landing_page_thumbnails
+  
+  def add_html
+    doc = Nokogiri::HTML(open("#{self.url}"))
+    self.html = doc.to_html
+    self.save!
+  end
   
   def calendar_dates
     date = self.release_date

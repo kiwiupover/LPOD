@@ -31,6 +31,7 @@ gem 'mechanize'
 
 gem 'will_paginate', '~> 3.0' 
 gem "friendly_id", "~> 4.0.0"
+gem "url_formatter"
 
 gem 'delayed_job_active_record'              
 gem 'daemons'
@@ -58,7 +59,7 @@ end
 
 gem "rspec-rails", :group => [:test, :development]
 group :test do
-  gem "factory_girl_rails"
+  gem "factory_girl_rails",   "< 1.4.2"
   gem "capybara"
   gem "guard-rspec"
   gem "spork", "> 0.9.0.rc"

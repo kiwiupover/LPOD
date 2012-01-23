@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120122082613) do
+ActiveRecord::Schema.define(:version => 20120123201428) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -57,31 +57,11 @@ ActiveRecord::Schema.define(:version => 20120122082613) do
 
   add_index "industries", ["slug"], :name => "index_industries_on_slug"
 
-  create_table "landing_page_types", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "slug"
-  end
+# Could not dump table "landing_page_types" because of following StandardError
+#   Unknown type 'sting' for column 'types'
 
-  add_index "landing_page_types", ["slug"], :name => "index_landing_page_types_on_slug"
-
-  create_table "landing_pages", :force => true do |t|
-    t.string   "url"
-    t.text     "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "screen_shot"
-    t.string   "title",                :limit => nil
-    t.integer  "landing_page_type_id"
-    t.integer  "industry_id"
-    t.string   "description"
-    t.date     "release_date"
-    t.integer  "score"
-    t.string   "keyword"
-    t.string   "keyword_cpc"
-    t.string   "slug"
-  end
+# Could not dump table "landing_pages" because of following StandardError
+#   Unknown type 'sting' for column 'title'
 
   create_table "votes", :force => true do |t|
     t.integer  "value"
