@@ -28,9 +28,7 @@
         <%= "</div>".html_safe if (oddeven(index) == "odd" || landing_page == @landing_pages.last ) %>
       <% end %>
     <% end %> 
-
-    <%= will_paginate @landing_pages %>
-    <%= link_to 'New Landing page', new_landing_page_path %>
+    <%= will_paginate @landing_pages, :page_links => false %>
   </div>
   <div class="columns three sidebar">
     <%= render "sidebar" %>

@@ -12,8 +12,7 @@
         </li>
       <% end %>
     </ul> 
-    <%= will_paginate @landing_pages %>
-    <%= link_to 'New Landing page', new_landing_page_path %>  
+    <%= will_paginate @landing_pages, :page_links => false %>
   </div>
   <div class="columns three sidebar">
     <%= render "landing_pages/sidebar" %> 

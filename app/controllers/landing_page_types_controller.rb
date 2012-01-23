@@ -2,7 +2,8 @@ class LandingPageTypesController < ApplicationController
   # GET /landing_page_types
   # GET /landing_page_types.json
   def index
-    @landing_page_types = LandingPageType.all
+    @landing_page_types = LandingPageType.all 
+    @sidebar = sidebar(nil,nil) 
 
     respond_to do |format|
       format.html # index.html.erb

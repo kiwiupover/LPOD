@@ -3,7 +3,8 @@ class IndustriesController < ApplicationController
   # GET /industries.json
   def index
     @industries = Industry.all
-
+    @sidebar = sidebar(nil,nil) 
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @industries }

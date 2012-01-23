@@ -1,26 +1,23 @@
-<div class="row">
-  <h1>Listing industries</h1>
-
-  <table>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-
+<div class="row pad-top">
+  <div class="columns nine">
+  <h1>Landing Pages by Industry</h1>
   <% @industries.each do |industry| %>
-    <tr>
-      <td><%= industry.name %></td>
-      <td><%= link_to 'Show', industry %></td>
-      <td><%= link_to 'Edit', edit_industry_path(industry) %></td>
-      <td><%= link_to 'Destroy', industry, confirm: 'Are you sure?', method: :delete %></td>
-    </tr>
-  <% end %>
-  </table>
-
-  <br />
-
-  <%= link_to 'New Industry', new_industry_path %>
+      <h3><%= link_to industry.name, industry %></h3>
+      <ul class="block-grid four-up">
+        <% industry.landing_pages.take(4).each do |landing_page| %>
+            <li class="inpad smallbox">
+              <div class="date">
+                <%= landing_page.release_date.to_date().to_formatted_s(:rfc822)  %>
+              </div>
+              <%= link_to image_tag(landing_page.screen_shot.thumb.url, :class => "border"), landing_page %>
+              <h4><%= link_to landing_page.title, landing_page %></h4>
+            </li> 
+        <% end unless industry.landing_pages.nil?   %>
+      </ul>  
+  <% end  %>
+  </div>
+  <div class="columns three sidebar">
+    <%= render "landing_pages/sidebar" %> 
+  </div>
 </div>
 

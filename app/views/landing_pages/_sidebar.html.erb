@@ -1,5 +1,5 @@
 <%= render 'advert' %>
-<h4>Pages by Industries</h4>
+<h4> <%= link_to "Pages by Industries", industries_path %></h4>
 <ul id="tags"> 
   <% @industries.each do |lp| %>
     <li>
@@ -11,7 +11,7 @@
   <% end %>   
 </ul>
 
-<h4 class="clear">Types of Landing Pages</h4>
+<h4 class="clear"><%= link_to "Types of Landing Pages", landing_page_types_path %></h4>
 <ul id="tags"> 
   <% @lpt.each do |lpt| %>
     <li>

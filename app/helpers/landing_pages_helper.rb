@@ -62,5 +62,12 @@ module LandingPagesHelper
      @output << "</ul>".html_safe
     end
   end
- 
+  
+ def smallbox(landing_page) 
+   content_tag :li, :class => "inpad smallbox" do
+     concat format_date(landing_page.release_date)
+     concat link_to image_tag(landing_page.screen_shot.thumb.url, :class => "border"), landing_page
+     concat content_tag(:h4, (link_to landing_page.title), landing_page)
+   end
+ end
 end

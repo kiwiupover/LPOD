@@ -1,23 +1,22 @@
-<h1>Listing landing_page_types</h1>
-
-<table>
-  <tr>
-    <th>Type</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @landing_page_types.each do |landing_page_type| %>
-  <tr>
-    <td><%= landing_page_type.name %></td>
-    <td><%= link_to 'Show', landing_page_type %></td>
-    <td><%= link_to 'Edit', edit_landing_page_type_path(landing_page_type) %></td>
-    <td><%= link_to 'Destroy', landing_page_type, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Landing page type', new_landing_page_type_path %>
+<div class="row pad-top">
+  <div class="columns nine">
+  <h1>Landing Pages by Type</h1>
+  <% @landing_page_types.each do |lpt| %>
+      <h3><%= link_to lpt.name, lpt %></h3>
+      <ul class="block-grid four-up">
+        <% lpt.landing_pages.take(4).each do |landing_page| %>
+            <li class="inpad smallbox">
+              <div class="date">
+                <%= landing_page.release_date.to_date().to_formatted_s(:rfc822)  %>
+              </div>
+              <%= link_to image_tag(landing_page.screen_shot.thumb.url, :class => "border"), landing_page %>
+              <h4><%= link_to landing_page.title, landing_page %></h4>
+            </li> 
+        <% end unless lpt.landing_pages.nil?   %>
+      </ul>  
+  <% end  %>
+  </div>
+  <div class="columns three sidebar">
+    <%= render "landing_pages/sidebar" %> 
+  </div>
+</div>

@@ -20,6 +20,7 @@ gem "rmagick"
 gem 'carrierwave' 
 
 gem 'fog'
+gem 'heroku'
 
 gem 'zurb-foundation'
 
