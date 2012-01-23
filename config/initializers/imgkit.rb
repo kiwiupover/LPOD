@@ -10,5 +10,5 @@ IMGKit.configure do |config|
     :quality => 100,
     :width => 1024
   }
-  config.default_format = :png
+  config.default_format = :jpg
 end   
