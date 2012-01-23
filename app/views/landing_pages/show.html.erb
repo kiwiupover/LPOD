@@ -14,15 +14,9 @@
     <div class="row inpad bigbox">
       <%= link_to image_tag(@landing_page.screen_shot.bigthumb.url, :class => "border"), @landing_page.screen_shot.url, :title => @landing_page.title, :class => "lightbox" %>
       <ul class="details right pad-top">
-        <li>
-          <%= @landing_page.keyword unless @landing_page.keyword.nil? %>
-          <%= @landing_page.keyword_cpc unless @landing_page.keyword_cpc.nil? %>
-        </li>
-        <li>
-          <%= link_to({:controller => "landing_pages", :action => "vote", :id => @landing_page}, :class => "vote add", :remote => true) do %>
-            <%= @landing_page.score %>
-           <% end %>
-        </li>
+        <%= keyword(@landing_page.keyword) %>
+        <%= cost_per_click(@landing_page.keyword_cpc) %>
+        <%= like_button(@landing_page) %>
       </ul>
     </div>
   </div>

@@ -85,6 +85,7 @@ class LandingPage < ActiveRecord::Base
     self.html = doc.to_html
     self.save!
   end
+  handle_asynchronously :add_html
   
   def calendar_dates
     date = self.release_date
