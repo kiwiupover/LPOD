@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120123201428) do
+ActiveRecord::Schema.define(:version => 20120125033237) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(:version => 20120123201428) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "screen_shot"
-    t.string   "title",                :limit => nil
+    t.string   "title"
     t.integer  "landing_page_type_id"
     t.integer  "industry_id"
     t.string   "description"
@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(:version => 20120123201428) do
     t.string   "keyword"
     t.string   "keyword_cpc"
     t.string   "slug"
-    t.binary   "html"
+    t.text     "html"
   end
 
   create_table "votes", :force => true do |t|
