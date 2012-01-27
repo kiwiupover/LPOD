@@ -22,7 +22,4 @@ jQuery ->
 	  $(this).children().children(".arrow").fadeIn()
 	), ->
 	  $(this).children().children(".arrow").hide()
-	window.disqus_no_style = true
-	$.getScript("http://landingpageoftheday.disqus.com/embed.js") 
-	$.getScript("http://landingpageoftheday.disqus.com/count.js")
 						
