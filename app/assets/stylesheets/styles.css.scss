@@ -332,4 +332,9 @@ footer {
   padding: 0;
   font-size: 11px;
   text-align: center;
+} 
+
+#dsq-content #dsq-comments li.dsq-comment {
+display: list-item !important;
+list-style: decimal !important;
 }
