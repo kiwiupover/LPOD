@@ -12,6 +12,9 @@
               <%= cost_per_click(landing_page.keyword_cpc) %>
               <%= like_button(landing_page) %>
             </ul>
+            <div class="clear left">
+              <%= render "social_buttons", :landing_page => landing_page  %>
+            </div>
           </div>
         </div>
       <% else %>
