@@ -18,17 +18,17 @@
         <%= cost_per_click(@landing_page.keyword_cpc) %>
         <%= like_button(@landing_page) %>
       </ul>
+      <div class="pad-top left">
+        <%= render "social_buttons" %>
+      </div>
     </div>
-    <div class="pad-top left">
+    <div class="row pad-top left">
       <%= render "disqus" %>
     </div>
   </div>
   <div class="columns three sidebar">
     <%= render "advert" %>
-    
     <%= lp_thumbs(@landing_page.industry, @lp_industry_prev, @lp_industry_next ) %>
     <%= lp_thumbs(@landing_page.landing_page_type, @lp_type_prev, @lp_type_next ) %>
-  
   </div>
-
 </div>

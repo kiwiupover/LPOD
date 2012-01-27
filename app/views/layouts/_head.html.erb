@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Landing Page of the Day</title>
+  <title>
+    <% if content_for?(:title) %>
+      <%= yield(:title) %>
+    <% else %>
+      Landing Page of the Day 
+    <% end %>  
+   </title>
   <%= stylesheet_link_tag    "application" %>
   <%= yield :head %>
   <%= csrf_meta_tags %>
