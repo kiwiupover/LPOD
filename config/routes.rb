@@ -12,7 +12,7 @@ LPOD::Application.routes.draw do
 
   match 'landing_pages/vote/:id' => 'landing_pages#vote'   
   
-
+  match "/delayed_job" => DelayedJobWeb, :anchor => false
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

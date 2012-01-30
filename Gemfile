@@ -34,7 +34,8 @@ gem "friendly_id", "~> 4.0.0"
 gem "url_formatter"
 
 gem 'delayed_job_active_record'              
-gem 'daemons'
+gem 'daemons' 
+gem "delayed_job_web"
 
 group :production do
   gem 'pg'
