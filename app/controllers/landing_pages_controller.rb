@@ -2,7 +2,7 @@ class LandingPagesController < ApplicationController
   respond_to :html, :json, :js
   
   def index  
-    @landing_pages = LandingPage.page(params[:page]).per_page(8).not_future.default
+    @landing_pages = LandingPage.page(params[:page]).not_future.per_page(8).default
     @sidebar = sidebar(nil,nil)
   end
 
