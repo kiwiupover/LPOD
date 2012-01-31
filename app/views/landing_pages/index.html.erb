@@ -6,12 +6,12 @@
           <div class="twelve inpad bigbox">
             <%= format_date(landing_page.release_date) %>
             <%= link_to image_tag(landing_page.screen_shot.bigthumb.url, :class => "border"), landing_page %>
-            <h3 class="pad-top-half left"><%= link_to landing_page.title, landing_page %></h3>
-            <div class="pad-top pad-left left">
+            <h3 class="pad-top-half"><%= link_to landing_page.title, landing_page %></h3>
+            <div class="left">
               <%= render "social_buttons", :landing_page => landing_page  %>
               <%= render "comments", :landing_page => landing_page  %>
             </div>
-            <ul class="details right pad-top">
+            <ul class="details right">
               <%= keyword(landing_page.keyword) %>
               <%= cost_per_click(landing_page.keyword_cpc) %>
               <%= like_button(landing_page) %>
@@ -24,10 +24,10 @@
             <%= format_date(landing_page.release_date) %> 
             <%= link_to image_tag(landing_page.screen_shot.thumb.url, :class => "border"), landing_page  %>
             <h4><%= link_to landing_page.title, landing_page %></h4>
-            <div class="pad-top-half pad-left left">
+            <div class="left">
               <%= render "comments", :landing_page => landing_page  %>
             </div>
-            <ul class="details right pad-top-half">
+            <ul class="details right">
               <%= cost_per_click(landing_page.keyword_cpc) %>
               <%= like_button(landing_page) %>
             </ul>
