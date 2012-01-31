@@ -15,9 +15,15 @@ jQuery ->
 		num = $(this).html()
 		$(this).html(parseInt(num) + 1).removeClass('add').removeAttr('href')
 		return false
-	$(".bigbox a.lightbox").fancybox 
-		buttons: 
-			position: 'top'
+	$(".bigbox a.lightbox").fancybox
+		maxWidth: 1070
+		maxHeight: 1200
+		fitToView: false
+		width: '100%'
+		height: '80%'
+		scrolling: 'yes'
+		type: 'iframe'
+		  
 	$(".sidebar li.left, .sidebar li.right").hover (->
 	  $(this).children().children(".arrow").fadeIn()
 	), ->

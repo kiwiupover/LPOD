@@ -2,7 +2,7 @@ class LandingPagesController < ApplicationController
   respond_to :html, :json, :js
   
   def index  
-    @landing_pages = LandingPage.page(params[:page]).per_page(8).default
+    @landing_pages = LandingPage.page(params[:page]).per_page(8).not_future.default
     @sidebar = sidebar(nil,nil)
   end
 
@@ -12,11 +12,11 @@ class LandingPagesController < ApplicationController
       redirect_to @landing_page, status: :moved_permanently
     end
     
-    @lp_industry_next = LandingPage.industry_id(@landing_page.industry_id).next(@landing_page.release_date).first
-    @lp_industry_prev = LandingPage.industry_id(@landing_page.industry_id).prev(@landing_page.release_date).first
+    @lp_industry_next = LandingPage.industry_id(@landing_page.industry_id).next(@landing_page.release_date).not_future.first
+    @lp_industry_prev = LandingPage.industry_id(@landing_page.industry_id).prev(@landing_page.release_date).not_future.first
     
-    @lp_type_next =     LandingPage.landing_page_type_id(@landing_page.landing_page_type_id).next(@landing_page.release_date).first
-    @lp_type_prev =     LandingPage.landing_page_type_id(@landing_page.landing_page_type_id).prev(@landing_page.release_date).first
+    @lp_type_next =     LandingPage.landing_page_type_id(@landing_page.landing_page_type_id).next(@landing_page.release_date).not_future.first
+    @lp_type_prev =     LandingPage.landing_page_type_id(@landing_page.landing_page_type_id).prev(@landing_page.release_date).not_future.first
   end
 
   def new
