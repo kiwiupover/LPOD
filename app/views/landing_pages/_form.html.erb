@@ -1,15 +1,8 @@
-<%= form_for @landing_page, :html => {:multipart => true, :class => "nice"} do |f| %>
+<%= simple_form_for @landing_page, :html => {:multipart => true} do |f| %>
   <% if @landing_page.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@landing_page.errors.count, "error") %> prohibited this landing_page from being saved:</h2>
-
-      <ul>
-      <% @landing_page.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
+    <%= f.error_notification %>
   <% end %>
+  <%= f.input :title %>
   <div class="field">
     <%= f.label :title %>
     <%= f.text_field :title, :class => "input-text" %>

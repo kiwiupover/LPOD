@@ -11,9 +11,12 @@ group :assets do
   gem 'sass-rails',   '~> 3.1.4'
   gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier', '>= 1.0.3'
+  gem 'zurb-foundation', '~> 2.2.0.2'
 end
 
 gem 'jquery-rails'
+
+gem 'simple_form'
 
 gem 'imgkit'
 gem "rmagick"
@@ -21,9 +24,11 @@ gem 'carrierwave'
 
 gem 'fog'
 gem 'heroku' 
-gem 'taps'
+gem 'taps' 
 
-gem 'zurb-foundation'
+gem 'pry-rails'
+
+
 
 gem 'event-calendar', :require => 'event_calendar' 
 

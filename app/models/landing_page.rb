@@ -11,14 +11,15 @@ class LandingPage < ActiveRecord::Base
   
   mount_uploader :screen_shot, ScreenshotUploader
   
-  after_create :landing_page_thumbnails, :calendar_dates, :add_html 
+  after_create :landing_page_thumbnails, :calendar_dates, :add_html, :keywords
+  after_update :add_html, :keywords 
 
   #added a tiny bit of error checking, so we can leave this active and see how it goes
   # after_update :get_cpc 
 
   #to use in home page, don't get stuff that shouldnt be released yet
   scope :not_future, where("release_date < ?", Time.zone.now.to_date + 1.day)
-
+  
   scope :default, order("release_date desc")
   
   scope :calendar, where("release_date > ?", Time.now - 30.days).default
@@ -83,14 +84,32 @@ class LandingPage < ActiveRecord::Base
   def add_html
     doc = Nokogiri::HTML(open("#{self.url}"))
     self.html = doc.to_html
+    self.page_title = doc.title
     self.save!
   end
-  handle_asynchronously :add_html
+  handle_asynchronously :add_html 
   
   def calendar_dates
     date = self.release_date
   end
- 
+  
+  def keywords
+    keywords = []
+    agent = Mechanize.new
+    agent.user_agent_alias = 'Mac Safari'
+    agent.get("http://www.alexa.com/")
+    form = agent.page.forms.first
+    form.q = "#{self.url}"
+    form.submit
+    agent.page.link_with(:text => "Get Details").click
+    agent.page.link_with(:text => "Search Analytics").click 
+    agent.page.search("#top-keywords-from-search .searchLink").each do |keyword|
+      keywords << keyword.text
+    end
+    self.related_keywords = keywords
+    self.save!
+  end
+  # handle_asynchronously :keywords
   
   # Need to setup Tests  
   # def get_cpc
