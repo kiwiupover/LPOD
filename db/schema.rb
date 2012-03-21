@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120225230333) do
+ActiveRecord::Schema.define(:version => 20120318081429) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer   "priority",   :default => 0
@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(:version => 20120225230333) do
     t.string    "alexa_rating"
     t.string    "ppc_budget"
     t.string    "google_ppc_keywords"
+    t.text      "related_text_keywords"
   end
 
   add_index "landing_pages", ["slug"], :name => "index_landing_pages_on_slug"

@@ -1,28 +1,11 @@
 <%= simple_form_for @landing_page, :html => {:multipart => true} do |f| %>
-  <% if @landing_page.errors.any? %>
-    <%= f.error_notification %>
-  <% end %>
+  <%= f.error_notification %>
   <%= f.input :title %>
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title, :class => "input-text" %>
-  </div>
-  <div class="field">
-    <%= f.label :url %>
-    <%= f.text_field :url, :class => "input-text" %>
-  </div>
-  <div class="field">
-    <%= f.label :keyword %>
-    <%= f.text_field :keyword, :class => "input-text" %>
-  </div> 
-  <div class="field">
-    <%= f.label :keyword_cpc, "Cost Per Click" %>
-    <%= f.text_field :keyword_cpc, :class => "input-text" %>
-  </div>
-  <div class="field">
-    <%= f.label :release_date %>
-    <%= f.text_field :release_date, :class => "input-text" %>
-  </div>
+  <%= f.input :url%>
+  <%= f.input :keyword %>
+  <%= content_tag :div, "", :id => "keyword_spy_url" %> 
+  <%= f.input :keyword_cpc %>
+  <%= f.input :release_date, :as => :date_picker, :input_html => { :class => "input-text" } %>
   <div class="field">
     <%= f.label :industry_name %>
     <%= f.text_field :industry_name, data: {ac_source: Industry.order(:name).map(&:name)}, :class => "input-text" %>
@@ -30,8 +13,11 @@
   <div class="field">
     <%= f.label :landing_page_type_name %>
     <%= f.text_field :landing_page_type_name, data: {autocomplete_source: LandingPageType.order(:name).map(&:name)}, :class => "input-text" %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Create Landing Page", :class => "nice medium radius blue button" %>
-  </div>
+  </div> 
+  <%= content_tag :div, "", :id => "alexa_url" %>
+  <%= f.input :related_text_keywords %>
+  <%= f.input :alexa_rating %>
+  <%= f.input :ppc_budget %>
+  <%= f.input :google_ppc_keywords %>
+  <%= f.button :submit %>
 <% end %>

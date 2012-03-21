@@ -55,7 +55,7 @@ SimpleForm.setup do |config|
   config.boolean_style = :nested
 
   # Default class for buttons
-  config.button_class = 'simple button nice radius'
+  config.button_class = 'button simple nice radius'
 
   # Method used to tidy up errors.
   # config.error_method = :first
@@ -99,7 +99,7 @@ SimpleForm.setup do |config|
   config.form_class = :nice 
 
   # You can define which elements should obtain additional classes
-  config.generate_additional_classes_for = [:input => 'input-text']
+  # config.generate_additional_classes_for = [:wrapper, :label, :input]
 
   # Whether attributes are required by default (or not). Default is true.
   # config.required_by_default = true
@@ -129,7 +129,7 @@ SimpleForm.setup do |config|
   # config.translate_labels = true
 
   # Automatically discover new inputs in Rails' autoload path.
-  # config.inputs_discovery = true
+  config.inputs_discovery = true 
 
   # Cache SimpleForm inputs discovery
   # config.cache_discovery = !Rails.env.development?

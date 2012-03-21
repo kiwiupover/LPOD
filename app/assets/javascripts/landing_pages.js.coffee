@@ -23,9 +23,22 @@ jQuery ->
 		height: '80%'
 		scrolling: 'yes'
 		type: 'iframe'
-		  
+	
+	$("input#landing_page_keyword").live "blur", ->
+	  link = $("input#landing_page_keyword").val()
+		 $('#keyword_spy_url').html("<h3><a target='_blank' href='http://www.keywordspy.com/research/search.aspx?q=" + link + "&type=keywords'>Keyword Spy</a></h3>");
+			  
+	$("input#landing_page_url").live "blur", ->
+	  link = $("input#landing_page_url").val()
+		 $('#alexa_url').html("<a target='_blank' href='http://www.alexa.com/search?q=" + link + "'>alexa.com</a>");
+	
+		
+	
 	$(".sidebar li.left, .sidebar li.right").hover (->
 	  $(this).children().children(".arrow").fadeIn()
 	), ->
 	  $(this).children().children(".arrow").hide()
+	
+	
+
 						
