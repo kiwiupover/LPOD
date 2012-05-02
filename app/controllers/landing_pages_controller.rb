@@ -88,6 +88,7 @@ private
   def strip_keywords
     
   end
+  
   def landing_page_calendar
     @month = (params[:month] || (Time.zone || Time).now.month).to_i
     @year = (params[:year] || (Time.zone || Time).now.year).to_i

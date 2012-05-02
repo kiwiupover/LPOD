@@ -28,7 +28,7 @@ module LandingPagesHelper
   
   def cost_per_click(keyword_cpc)
     content_tag :li, :class => "details" do
-      @output = content_tag :span, "Cost Per Click: "
+      @output = content_tag :span, "Cost Per Click: $"
       @output << keyword_cpc
     end unless keyword_cpc.nil?
   end
