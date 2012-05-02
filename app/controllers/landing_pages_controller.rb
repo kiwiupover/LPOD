@@ -31,7 +31,7 @@ class LandingPagesController < ApplicationController
 
   def create
     @landing_page = LandingPage.new(params[:landing_page])
-    strip_keywords 
+    # strip_keywords 
     landing_page_calendar 
     
     respond_to do |format|
@@ -85,9 +85,9 @@ class LandingPagesController < ApplicationController
   
 
 private
-  def strip_keywords
-    
-  end
+  # def strip_keywords
+  #   
+  # end 
   
   def landing_page_calendar
     @month = (params[:month] || (Time.zone || Time).now.month).to_i

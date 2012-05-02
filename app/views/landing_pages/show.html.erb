@@ -23,9 +23,9 @@
       </div> 
       <div class="columns four">
          <ul class="details pad-top">
-            <%= keyword(@landing_page.keyword) %>
+            <%= list_item(@landing_page.keyword, "Keyword") %>
             <%= cost_per_click(@landing_page.keyword_cpc) %>
-            <%= @landing_page.page_title %>
+            <%= list_item(@landing_page.page_title, "Page Title")%>
             <%= @landing_page.alexa_rating if @landing_page.alexa_rating %>
             <%= @landing_page.ppc_budget if @landing_page.ppc_budget  %>
             <%= @landing_page.google_ppc_keywords if @landing_page.google_ppc_keywords  %>

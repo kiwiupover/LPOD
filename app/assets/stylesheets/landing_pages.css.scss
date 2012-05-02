@@ -38,9 +38,13 @@ ul.ui-autocomplete {
 		background-position:0 bottom;
 	}
 } 
-li.details {
-	font-style:italic;
-	font-weight:bold;
-	span {
-	 font-weight:normal;}
+ul.details {
+	li {
+		font-size:16px;
+		font-weight:bold;
+		span {
+			font-size:90%;
+			font-weight:normal;
+			font-style:italic;}
+	}
 }
