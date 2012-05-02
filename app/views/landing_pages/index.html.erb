@@ -12,7 +12,7 @@
               <%= render "comments", :landing_page => landing_page  %>
             </div>
             <ul class="details right">
-              <%= keyword(landing_page.keyword) %>
+              <%= list_item(landing_page.keyword, "Keyword") %>
               <%= cost_per_click(landing_page.keyword_cpc) %>
               <%= like_button(landing_page) %>
             </ul>
