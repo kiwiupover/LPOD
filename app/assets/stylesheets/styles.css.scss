@@ -160,8 +160,10 @@ img.border {
 	
 } 
 footer {
-	background:#667788;
-	@include gradiant(#667788, #223344); 
+	background:#E86716;
+	@include gradiant(#E86716, #DF5610);
+	border-top:3px solid #5E0700; 
+	@include shadow_top();
 	padding:20px 0 30px;
 	.copywrite {
 		clear:both;
@@ -229,4 +231,4 @@ list-style: decimal !important;
 }
 #dsq-content h3 {
 	font-size:1.5em;
-}
+} 
