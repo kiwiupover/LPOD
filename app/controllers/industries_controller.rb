@@ -1,4 +1,6 @@
 class IndustriesController < ApplicationController
+  
+  before_filter :authorize, only: [:new, :create, :edit, :update, :destroy]
   # GET /industries
   # GET /industries.json
   def index
