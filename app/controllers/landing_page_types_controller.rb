@@ -1,4 +1,7 @@
 class LandingPageTypesController < ApplicationController
+  
+  before_filter :authorize, only: [:new, :create, :edit, :update, :destroy]
+  
   # GET /landing_page_types
   # GET /landing_page_types.json
   def index
