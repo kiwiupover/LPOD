@@ -47,6 +47,7 @@ gem 'hirefire'
 
 group :production do
   gem 'pg'
+  gem 'thin'
 end    
 
 group :development, :test do
