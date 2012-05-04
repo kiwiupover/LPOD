@@ -43,7 +43,7 @@ gem 'delayed_job_active_record'
 gem 'daemons' 
 gem "delayed_job_web" 
 
-gem 'hirefire'
+gem 'hirefire'  
 
 group :production do
   gem 'pg'
