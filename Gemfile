@@ -41,7 +41,9 @@ gem "url_formatter"
 
 gem 'delayed_job_active_record'              
 gem 'daemons' 
-gem "delayed_job_web"
+gem "delayed_job_web" 
+
+gem 'hirefire'
 
 group :production do
   gem 'pg'
@@ -50,6 +52,7 @@ end
 group :development, :test do
   gem 'sqlite3'
 end
+
 
 
 # To use ActiveModel has_secure_password
