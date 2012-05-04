@@ -11,37 +11,37 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120318081429) do
+ActiveRecord::Schema.define(:version => 20120504193424) do
 
   create_table "delayed_jobs", :force => true do |t|
-    t.integer   "priority",   :default => 0
-    t.integer   "attempts",   :default => 0
-    t.text      "handler"
-    t.text      "last_error"
-    t.timestamp "run_at"
-    t.timestamp "locked_at"
-    t.timestamp "failed_at"
-    t.string    "locked_by"
-    t.string    "queue"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
+    t.integer  "priority",   :default => 0
+    t.integer  "attempts",   :default => 0
+    t.text     "handler"
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
 
   create_table "events", :force => true do |t|
-    t.string    "name"
-    t.timestamp "start_at"
-    t.timestamp "end_at"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
+    t.string   "name"
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "friendly_id_slugs", :force => true do |t|
-    t.string    "slug",                         :null => false
-    t.integer   "sluggable_id",                 :null => false
-    t.string    "sluggable_type", :limit => 40
-    t.timestamp "created_at"
+    t.string   "slug",                         :null => false
+    t.integer  "sluggable_id",                 :null => false
+    t.string   "sluggable_type", :limit => 40
+    t.datetime "created_at"
   end
 
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], :name => "index_friendly_id_slugs_on_slug_and_sluggable_type", :unique => true
@@ -49,55 +49,62 @@ ActiveRecord::Schema.define(:version => 20120318081429) do
   add_index "friendly_id_slugs", ["sluggable_type"], :name => "index_friendly_id_slugs_on_sluggable_type"
 
   create_table "industries", :force => true do |t|
-    t.string    "name"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.string    "slug"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "slug"
   end
 
   add_index "industries", ["slug"], :name => "index_industries_on_slug"
 
   create_table "landing_page_types", :force => true do |t|
-    t.string    "name"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.string    "slug"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "slug"
   end
 
   add_index "landing_page_types", ["slug"], :name => "index_landing_page_types_on_slug"
 
   create_table "landing_pages", :force => true do |t|
-    t.string    "url"
-    t.text      "content"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.string    "screen_shot"
-    t.string    "title"
-    t.integer   "landing_page_type_id"
-    t.integer   "industry_id"
-    t.string    "description"
-    t.timestamp "release_date"
-    t.integer   "score"
-    t.string    "keyword"
-    t.string    "keyword_cpc"
-    t.string    "slug"
-    t.binary    "html"
-    t.string    "page_title"
-    t.string    "related_keywords"
-    t.string    "alexa_rating"
-    t.string    "ppc_budget"
-    t.string    "google_ppc_keywords"
-    t.text      "related_text_keywords"
+    t.string   "url"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "screen_shot"
+    t.string   "title"
+    t.integer  "landing_page_type_id"
+    t.integer  "industry_id"
+    t.string   "description"
+    t.datetime "release_date"
+    t.integer  "score"
+    t.string   "keyword"
+    t.string   "keyword_cpc"
+    t.string   "slug"
+    t.text     "html"
+    t.string   "page_title"
+    t.string   "related_keywords"
+    t.string   "alexa_rating"
+    t.string   "ppc_budget"
+    t.string   "google_ppc_keywords"
+    t.text     "related_text_keywords"
   end
 
   add_index "landing_pages", ["slug"], :name => "index_landing_pages_on_slug"
 
+  create_table "users", :force => true do |t|
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
   create_table "votes", :force => true do |t|
-    t.integer   "value"
-    t.integer   "landing_page_id"
-    t.string    "ip"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
+    t.integer  "value"
+    t.integer  "landing_page_id"
+    t.string   "ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

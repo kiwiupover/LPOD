@@ -39,5 +39,13 @@
   </div>
   <div class="columns three sidebar">
     <%= render "sidebar" %>
+    <% if current_user %>
+      <div class="pad-top">
+        <%= login %>
+        <%= logout %>
+        <%= link_to "New Landing Page", landing_page_new %>
+      </div>
+    <% end %>
   </div>
+  
 </div>
