@@ -5,5 +5,5 @@ module ApplicationHelper
         (parts << "Landing Page of the Day").join(" | ")
       end
     end
-  end
+  end 
 end

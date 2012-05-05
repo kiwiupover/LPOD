@@ -10,14 +10,6 @@ class ApplicationController < ActionController::Base
     redirect_to login_url, alert: "Not authorized" if current_user.nil?
   end
   
-  def logout
-    link_to "Log Out", logout_path
-  end
-  
-  def login
-    link_to "Log In", login_path
-  end
-  
   private
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]

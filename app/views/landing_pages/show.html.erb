@@ -41,5 +41,12 @@
     <%= render "advert" %>
     <%= lp_thumbs(@landing_page.industry, @lp_industry_prev, @lp_industry_next ) %>
     <%= lp_thumbs(@landing_page.landing_page_type, @lp_type_prev, @lp_type_next ) %>
+    <% if current_user %>
+      <div class="pad-top left">
+        <%= login %>
+        <%= logout %>
+        <%= link_to "New Landing Page", new_landing_page_path %>
+      </div>
+    <% end %>
   </div>
 </div>

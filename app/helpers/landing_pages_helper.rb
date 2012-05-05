@@ -70,4 +70,13 @@ module LandingPagesHelper
      concat content_tag(:h4, (link_to landing_page.title), landing_page)
    end
  end
+ 
+ def logout
+   link_to "Log Out", logout_path
+ end
+ 
+ def login
+   link_to "Log In", login_path
+ end
+ 
 end
