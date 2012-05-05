@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  
+  before_filter :redirect
+  
   def new
     @user = User.new
   end
@@ -11,5 +14,11 @@ class UsersController < ApplicationController
     else 
       render "new"
     end
+  end
+  
+  private
+  
+  def redirect
+    redirect_to root_url
   end
 end
