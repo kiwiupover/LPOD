@@ -26,7 +26,7 @@ gem 'carrierwave'
 
 gem 'fog'
 gem 'heroku' 
-gem 'taps' 
+gem 'taps'
 
 gem 'pry-rails'
 
@@ -47,14 +47,14 @@ gem "delayed_job_web"
 
 gem 'hirefire'  
 
-group :production do
-  gem 'pg'
-  gem 'thin'
-end    
 
-group :development, :test do
-  gem 'sqlite3'
-end
+gem 'pg'
+gem 'thin'  
+  
+
+# group :development, :test do
+#   gem 'sqlite3'
+# end  
 
 
 
