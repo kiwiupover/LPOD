@@ -15,7 +15,7 @@ jQuery ->
 		num = $(this).html()
 		$(this).html(parseInt(num) + 1).removeClass('add').removeAttr('href')
 		return false
-	$(".bigbox a.lightbox").fancybox
+	$("a.lightbox").fancybox
 		maxWidth: 1070
 		maxHeight: 1200
 		fitToView: false

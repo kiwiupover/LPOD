@@ -23,13 +23,14 @@ module LandingPagesHelper
     content_tag :li do
       @output = content_tag :span, "#{title}: "
       @output << item
-    end unless item.nil?
+    end unless item.blank?
   end
   
   def cost_per_click(keyword_cpc)
+    keyword_cpc = keyword_cpc.gsub("$","")
     content_tag :li, :class => "cpc" do
-      @output = content_tag :span, "Cost Per Click: $"
-      @output << keyword_cpc
+      @output = content_tag :span, "Cost Per Click: "
+      @output << "$#{keyword_cpc}"
     end unless keyword_cpc.nil?
   end
   
