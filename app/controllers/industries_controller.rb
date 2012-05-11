@@ -17,7 +17,7 @@ class IndustriesController < ApplicationController
   # GET /industries/1.json
   def show
     @industry = Industry.find(params[:id])
-    @landing_pages = LandingPage.where(:industry_id => @industry).page(params[:page]).per_page(8).default
+    @landing_pages = LandingPage.where(:industry_id => @industry).page(params[:page]).per_page(8).not_future.default
     @sidebar = sidebar(nil,nil) 
     
     respond_to do |format|

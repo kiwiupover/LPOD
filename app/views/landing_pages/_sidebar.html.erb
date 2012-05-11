@@ -5,7 +5,7 @@
     <li>
       <%= link_to(industry_path(lp), :class => "tag") do %>
         <span class="tag_name"><%= lp.name %> </span>
-  			<span class="tag_count"><%= lp.landing_pages.count %> </span>
+  			<span class="tag_count"><%= lp.landing_pages.not_future.count %> </span>
       <% end %>
 		</li>
   <% end %>   
@@ -17,7 +17,7 @@
     <li>
       <%= link_to(landing_page_type_path(lpt), :class => "tag") do %>
         <span class="tag_name"><%= lpt.name %> </span>
-  			<span class="tag_count"><%= lpt.landing_pages.count %> </span>
+  			<span class="tag_count"><%= lpt.landing_pages.not_future.count %> </span>
       <% end %>
 		</li>
   <% end %>   
