@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120504193424) do
+ActiveRecord::Schema.define(:version => 20120511203447) do
+
+  create_table "adverts", :force => true do |t|
+    t.string   "name"
+    t.string   "image"
+    t.string   "link"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -23,8 +31,8 @@ ActiveRecord::Schema.define(:version => 20120504193424) do
     t.datetime "failed_at"
     t.string   "locked_by"
     t.string   "queue"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
@@ -33,8 +41,8 @@ ActiveRecord::Schema.define(:version => 20120504193424) do
     t.string   "name"
     t.datetime "start_at"
     t.datetime "end_at"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "friendly_id_slugs", :force => true do |t|
@@ -50,8 +58,8 @@ ActiveRecord::Schema.define(:version => 20120504193424) do
 
   create_table "industries", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "slug"
   end
 
@@ -59,8 +67,8 @@ ActiveRecord::Schema.define(:version => 20120504193424) do
 
   create_table "landing_page_types", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "slug"
   end
 
@@ -69,8 +77,8 @@ ActiveRecord::Schema.define(:version => 20120504193424) do
   create_table "landing_pages", :force => true do |t|
     t.string   "url"
     t.text     "content"
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "screen_shot"
     t.string   "title"
     t.integer  "landing_page_type_id"
@@ -103,8 +111,8 @@ ActiveRecord::Schema.define(:version => 20120504193424) do
     t.integer  "value"
     t.integer  "landing_page_id"
     t.string   "ip"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
