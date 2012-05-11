@@ -86,6 +86,13 @@ class LandingPagesController < ApplicationController
     end 
   end 
   
+  def feed
+    @landing_pages = LandingPage.feed 
+
+    respond_to do |format|
+       format.rss { render :layout => false }
+    end
+  end
 
 private
   # def strip_keywords

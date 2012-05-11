@@ -8,6 +8,8 @@
       Landing Page of the Day 
     <% end %>  
    </title>
+  <%= auto_discovery_link_tag :atom, "/feed" %>
+  <%= auto_discovery_link_tag :rss, "/feed.rss" %>
   <%= stylesheet_link_tag "application" %>
   <%= javascript_include_tag "application" %>
   <%= yield :head %>

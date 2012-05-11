@@ -17,6 +17,9 @@ LPOD::Application.routes.draw do
   resources :landing_page_types
 
   resources :landing_pages
+  match '/feed' => 'landing_pages#feed',
+        :as => :feed,
+        :defaults => { :format => 'atom' }
 
   match 'landing_pages/vote/:id' => 'landing_pages#vote'   
   
