@@ -144,7 +144,7 @@ img.border {
 	float:left;
 	margin-bottom:20px;
 	@include gradiant(#6E7692, darken(#6E7692,10%)); 
-	@include shadow();
+	@include shadow(rgba(0, 0, 0, 0.5));
 	@include rounded(3px);
 	img {
 		margin:5px 5px 0;

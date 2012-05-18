@@ -20,11 +20,18 @@ $ft_color:						#cccccc;
 	-webkit-box-shadow:  0 1px 4px $color-rgba;
 }
 
-@mixin shadow_top($color-rgba: rgba(0, 0, 0, 0.1)) {
-	box-shadow: 				 0 -1px 4px $color-rgba;
-	-o-box-shadow: 			 0 -1px 4px $color-rgba;
-	-moz-box-shadow: 		 0 -1px 4px $color-rgba;
-	-webkit-box-shadow:  0 -1px 4px $color-rgba;
+@mixin shadow_bottom($opacity: 0.5) {
+	box-shadow: 				 0 4px 6px -4px rgba(0, 0, 0, $opacity);
+	-o-box-shadow: 			 0 4px 6px -4px rgba(0, 0, 0, $opacity);
+	-moz-box-shadow: 		 0 4px 6px -4px rgba(0, 0, 0, $opacity);
+	-webkit-box-shadow:  0 4px 6px -4px rgba(0, 0, 0, $opacity);
+}
+
+@mixin shadow_top($opacity: 0.5) {
+	box-shadow: 				 0 -4px 10px -4px rgba(0, 0, 0, $opacity);
+	-o-box-shadow: 			 0 -4px 10px -4px rgba(0, 0, 0, $opacity);
+	-moz-box-shadow: 		 0 -4px 10px -4px rgba(0, 0, 0, $opacity);
+	-webkit-box-shadow:  0 -4px 10px -4px rgba(0, 0, 0, $opacity);
 }
 
 @mixin inshadow($color: #000) {
@@ -47,13 +54,36 @@ $ft_color:						#cccccc;
 	-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1) inset, -8px -8px 0 0 $color, 8px 8px 0 0 $color, 8px 0 0 0 $color, 0 8px 0 0 $color, 8px -8px 0 0 $color, -8px 8px 0 0 $color;
 	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1) inset, -8px -8px 0 0 $color, 8px 8px 0 0 $color, 8px 0 0 0 $color, 0 8px 0 0 $color, 8px -8px 0 0 $color, -8px 8px 0 0 $color;
 }
-@mixin gradiant($color1: $anchor_color_light, $color2: $anchor_color) {
+@mixin gradiant_left($color1: #af2d01, $color2: #700402) {
+	background: $color1;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $color1), color-stop(100%, $color2));
+	background-image: linear-gradient(				 left, $color1 0%, $color2 100%);
+	background-image: -o-linear-gradient(			 left, $color1 0%, $color2 100%);
+	background-image: -moz-linear-gradient(		 left, $color1 0%, $color2 100%);
+	background-image: -webkit-linear-gradient( left, $color1 0%, $color2 100%);
+	background-image: -ms-linear-gradient(		 left, $color1 0%, $color2 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr="#{$color1}", endColorstr="#{$color2}",GradientType=1 );
+}
+@mixin gradiant($color1: #af2d01, $color2: #700402) {
+	background: $color1;
+	background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, $color1), color-stop(100%, $color2));
 	background-image: linear-gradient(				 top, $color1 0%, $color2 100%);
 	background-image: -o-linear-gradient(			 top, $color1 0%, $color2 100%);
 	background-image: -moz-linear-gradient(		 top, $color1 0%, $color2 100%);
 	background-image: -webkit-linear-gradient( top, $color1 0%, $color2 100%);
 	background-image: -ms-linear-gradient(		 top, $color1 0%, $color2 100%);
-}   
+	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr="#{$color1}", endColorstr="#{$color2}",GradientType=0 );
+}
+@mixin gradiant_top($color1: #af2d01, $color2: #700402) {
+	background: $color1;
+	background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, $color1), color-stop(100%, $color2));
+	background-image: linear-gradient(				 top, $color1 0%, $color2 100%);
+	background-image: -o-linear-gradient(			 top, $color1 0%, $color2 100%);
+	background-image: -moz-linear-gradient(		 top, $color1 0%, $color2 100%);
+	background-image: -webkit-linear-gradient( top, $color1 0%, $color2 100%);
+	background-image: -ms-linear-gradient(		 top, $color1 0%, $color2 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr="#{$color1}", endColorstr="#{$color2}",GradientType=0 );
+}  
 @mixin textshadow(){
 	text-shadow: 0 1px rgba(0,0,0,0.4);
 }
