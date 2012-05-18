@@ -138,17 +138,23 @@ img.border {
 	}
 }
 .addbox {
-	background:#efefef;
+	background:#6E7692;
 	width:100%;
-	height:200px;
 	vertical-align:middle;
-	@include inshadow(#ddd);
-	@include rounded(3px); 
-	h3 {
-		color:lighten($text_color, 40%);
+	float:left;
+	margin-bottom:20px;
+	@include gradiant(#6E7692, darken(#6E7692,10%)); 
+	@include shadow();
+	@include rounded(3px);
+	img {
+		margin:5px 5px 0;
+	} 
+	h4 {
+		padding:5px 10px 5px;
 		font-size:16px;
-		text-align:center;
-		vertical-align:middle;} 
+		vertical-align:middle;
+		a {color:#fff;}
+	} 
 } 
 .pagination {
 	text-align:center;

@@ -1,6 +1,9 @@
 <%= simple_form_for @landing_page, :html => {:multipart => true} do |f| %>
   <%= f.error_notification %>
-  <%= f.input :title %>
+  <%= f.input :title %> 
+  <% if params[:action] == "edit" %>
+    <%= f.input :screen_shot %> 
+  <% end %>
   <%= f.input :url%>
   <%= f.input :keyword %>
   <%= content_tag :div, "", :id => "keyword_spy_url" %> 

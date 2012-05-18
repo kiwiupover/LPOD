@@ -1,3 +1,8 @@
 <div class="addbox">
-  <h3 class="pad-top-big">Your Ad Goes here</h3>
+  <%= link_to image_tag(@advert.image.url), 
+          append_advert_link(@advert.link), 
+          :target => "blank" %>
+  <h4><%= link_to @advert.name, 
+          append_advert_link(@advert.link), 
+          :target => "blank" %></h4> 
 </div>

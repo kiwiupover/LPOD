@@ -7,7 +7,8 @@ class LandingPageTypesController < ApplicationController
   def index
     @landing_page_types = LandingPageType.all 
     @sidebar = sidebar(nil,nil) 
-
+    @advert = advert
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @landing_page_types }
@@ -20,7 +21,8 @@ class LandingPageTypesController < ApplicationController
     @landing_page_type = LandingPageType.find(params[:id])
     @landing_pages = LandingPage.where(:landing_page_type_id => @landing_page_type).page(params[:page]).per_page(8).default
     @sidebar = sidebar(nil,nil) 
-
+    @advert = advert
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @landing_page_type }

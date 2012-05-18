@@ -53,6 +53,10 @@ module LandingPagesHelper
     end
     
   end
+   
+  def append_advert_link(link)
+    link + "?ref=kiwiupover"
+  end
   
   def lp_thumbs(category, prev_lp, next_lp)
     if prev_lp || next_lp

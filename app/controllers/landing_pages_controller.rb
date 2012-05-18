@@ -7,10 +7,16 @@ class LandingPagesController < ApplicationController
   def index  
     @landing_pages = LandingPage.page(params[:page]).not_future.per_page(8).default
     @sidebar = sidebar(nil,nil)
+    @advert = advert
+    respond_to do |format|
+      format.html { @landing_pages }
+      format.json { render json: @landing_pages }
+    end     
   end
 
   def show
     @landing_page = LandingPage.find(params[:id])
+    @advert = advert
     if request.path != landing_page_path(@landing_page)
       redirect_to @landing_page, status: :moved_permanently
     end

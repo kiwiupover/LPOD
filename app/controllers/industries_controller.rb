@@ -5,7 +5,8 @@ class IndustriesController < ApplicationController
   # GET /industries.json
   def index
     @industries = Industry.all
-    @sidebar = sidebar(nil,nil) 
+    @sidebar = sidebar(nil,nil)
+    @advert = advert 
     
     respond_to do |format|
       format.html # index.html.erb
@@ -19,6 +20,7 @@ class IndustriesController < ApplicationController
     @industry = Industry.find(params[:id])
     @landing_pages = LandingPage.where(:industry_id => @industry).page(params[:page]).per_page(8).not_future.default
     @sidebar = sidebar(nil,nil) 
+    @advert = advert
     
     respond_to do |format|
       format.html # show.html.erb
