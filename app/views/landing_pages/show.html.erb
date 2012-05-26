@@ -1,3 +1,7 @@
+<% content_for :head do %> 
+  <%= p "dave Laird"  %>
+  <%= meta_description(@landing_page.meta_description)  %>
+<% end %>
 <div class="row">
   <% flash.each do |key, msg| %>
     <div id="alert-box_<%= "#{key}" %>" class="alert-box marg-top">
