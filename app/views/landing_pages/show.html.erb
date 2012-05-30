@@ -1,6 +1,5 @@
 <% content_for :head do %> 
-  <%= p "dave Laird"  %>
-  <%= meta_description(@landing_page.meta_description)  %>
+
 <% end %>
 <div class="row">
   <% flash.each do |key, msg| %>
@@ -34,6 +33,7 @@
             <%= list_item(@landing_page.google_ppc_keywords, "Number of Google PPC Keywords")%>
             <%= list_item(@landing_page.alexa_rating, "Alexa Rating")%>  
           </ul>
+          <%= markdown @landing_page.commentary if @landing_page.commentary %>
       </div>
     </div>
     

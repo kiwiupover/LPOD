@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120511203447) do
+ActiveRecord::Schema.define(:version => 20120530155309) do
 
   create_table "adverts", :force => true do |t|
     t.string   "name"
@@ -96,9 +96,20 @@ ActiveRecord::Schema.define(:version => 20120511203447) do
     t.string   "ppc_budget"
     t.string   "google_ppc_keywords"
     t.text     "related_text_keywords"
+    t.text     "meta_description"
+    t.text     "commentary"
   end
 
   add_index "landing_pages", ["slug"], :name => "index_landing_pages_on_slug"
+
+  create_table "requests", :force => true do |t|
+    t.string   "title"
+    t.string   "url"
+    t.string   "keyword"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.text     "comment"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email"

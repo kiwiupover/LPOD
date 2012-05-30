@@ -22,7 +22,9 @@ gem 'simple_form'
 
 gem 'imgkit'
 gem "rmagick"
-gem 'carrierwave' 
+gem 'carrierwave'
+
+gem 'redcarpet' 
 
 gem 'fog'
 gem 'heroku' 
