@@ -1,7 +1,8 @@
 <% set_meta_tags :title => "#{@landing_page.title}",
-                  :description => description(@landing_page.title),
+                  :description => description_tag(@landing_page.description),
+                  :reverse => true,
                   :open_graph => {
-                    :title => "#{@landing_page.title}",
+                    :title => "#{@landing_page.title} Landing Page",
                     :type  => :image,
                     :url   => "#{@landing_page.screen_shot.url}"
                   }  %>

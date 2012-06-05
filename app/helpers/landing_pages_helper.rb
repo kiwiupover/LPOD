@@ -11,7 +11,7 @@ module LandingPagesHelper
     if description
       description
     else
-      "Landing pages of a vast array of industry and landing page types." 
+      "Landing pages are the destination of a web search. Landing pages from a wide varity of industries." 
     end
   end 
   
