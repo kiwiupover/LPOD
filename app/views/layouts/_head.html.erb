@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>
-    <% if content_for?(:title) %>
-      <%= yield(:title) %>
-    <% else %>
-      Landing Page of the Day 
-    <% end %>  
-   </title>
+  <%= display_meta_tags :site => 'Landing Page of the Day' %>
   <%= auto_discovery_link_tag :atom, "/feed" %>
   <%= auto_discovery_link_tag :rss, "/feed.rss" %>
   <%= stylesheet_link_tag "application" %>

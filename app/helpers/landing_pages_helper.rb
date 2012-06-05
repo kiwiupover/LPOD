@@ -7,6 +7,14 @@ module LandingPagesHelper
     end
   end
   
+  def description_tag(description)
+    if description
+      description
+    else
+      "Landing pages of a vast array of industry and landing page types." 
+    end
+  end 
+  
   def page_one?
     if (params[:page].nil? || params[:page] <= "1") 
       true 

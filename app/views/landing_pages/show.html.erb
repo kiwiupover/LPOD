@@ -1,6 +1,10 @@
-<% content_for :head do %> 
-
-<% end %>
+<% set_meta_tags :title => "#{@landing_page.title}",
+                  :description => description(@landing_page.title),
+                  :open_graph => {
+                    :title => "#{@landing_page.title}",
+                    :type  => :image,
+                    :url   => "#{@landing_page.screen_shot.url}"
+                  }  %>
 <div class="row">
   <% flash.each do |key, msg| %>
     <div id="alert-box_<%= "#{key}" %>" class="alert-box marg-top">

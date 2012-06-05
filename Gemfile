@@ -31,7 +31,8 @@ gem 'heroku'
 gem 'taps'
 
 gem 'pry-rails'
-
+               
+gem 'meta-tags', :require => 'meta_tags'
 
 
 gem 'event-calendar', :require => 'event_calendar' 

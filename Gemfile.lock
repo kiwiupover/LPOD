@@ -125,6 +125,8 @@ GEM
       nokogiri (~> 1.4)
       ntlm-http (~> 0.1, >= 0.1.1)
       webrobots (~> 0.0, >= 0.0.9)
+    meta-tags (1.2.6)
+      actionpack
     method_source (0.7.0)
     mime-types (1.18)
     multi_json (1.0.4)
@@ -262,6 +264,7 @@ DEPENDENCIES
   imgkit
   jquery-rails
   mechanize
+  meta-tags
   nokogiri
   pg
   pry-rails
