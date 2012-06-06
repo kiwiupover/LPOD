@@ -3,7 +3,6 @@ class LandingPagesController < ApplicationController
   
   before_filter :authorize, only: [:new, :create, :edit, :update, :destroy]
   
-  
   def index  
     @landing_pages = LandingPage.page(params[:page]).not_future.per_page(8).default
     @sidebar = sidebar(nil,nil)
@@ -12,7 +11,7 @@ class LandingPagesController < ApplicationController
       format.html { @landing_pages }
       format.json { render json: @landing_pages }
     end     
-  end
+  end 
 
   def show
     @landing_page = LandingPage.find(params[:id])

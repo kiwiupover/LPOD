@@ -18,7 +18,9 @@ gem 'sass-rails',   '~> 3.2.3'
 gem 'zurb-foundation' 
 gem 'jquery-rails'
 
-gem 'simple_form'
+gem 'simple_form'  
+
+gem 'newrelic_rpm'
 
 gem 'imgkit'
 gem "rmagick"

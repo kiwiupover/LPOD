@@ -136,6 +136,7 @@ GEM
       net-ssh (>= 1.99.1)
     net-ssh (2.3.0)
     netrc (0.7.1)
+    newrelic_rpm (3.3.5)
     nokogiri (1.5.0)
     ntlm-http (0.1.1)
     pg (0.12.2)
@@ -265,6 +266,7 @@ DEPENDENCIES
   jquery-rails
   mechanize
   meta-tags
+  newrelic_rpm
   nokogiri
   pg
   pry-rails
