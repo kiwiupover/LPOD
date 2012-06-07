@@ -11,12 +11,4 @@
 # // but don't use it directly in application code.
 
 
-# overall app
-window.App = Ember.Application.create()
-
-# specify the adapter for accessing with ember-data
-App.store = DS.Store.create(
-  adapter: DS.RESTAdapter.create(bulkCommit: false)
-  revision: 4
-)
 
