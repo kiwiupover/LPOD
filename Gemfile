@@ -14,7 +14,8 @@ group :assets do
   gem 'compass-rails'
 end
 
-gem 'sass-rails',   '~> 3.2.3' 
+gem 'sass-rails',   '~> 3.2.3'
+gem 'compass-rails' 
 gem 'zurb-foundation' 
 gem 'jquery-rails'
 

@@ -246,5 +246,9 @@ list-style: decimal !important;
 #dsq-content h3 {
 	font-size:1.5em;
 }   
+          
+@import "compass/layout/sticky-footer";
+
+@include sticky-footer(89px, "#wrapper", "#footer-push", "#footer");
 
 @import "spaces";

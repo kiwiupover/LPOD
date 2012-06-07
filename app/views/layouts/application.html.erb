@@ -1,4 +1,6 @@
 <%= render "layouts/head" %>
+<body>
+<div id="wrapper">
 <header id="header" class="container">
   <div class="row">
     <div class="columns six">
@@ -18,7 +20,8 @@
 <div class="container wrapper-bg">
   <%= yield %>
 </div>
-
+  <div id="footer-push"></div>
+</div><%# wrapper-end %>
 <%= render "layouts/foot" %>
 </body>
 </html>
