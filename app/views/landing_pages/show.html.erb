@@ -38,7 +38,11 @@
             <%= list_item(@landing_page.google_ppc_keywords, "Number of Google PPC Keywords")%>
             <%= list_item(@landing_page.alexa_rating, "Alexa Rating")%>  
           </ul>
-          <%= markdown @landing_page.commentary if @landing_page.commentary %>
+          <div class="commentary">
+            <h4>Commentary</h4>
+            <%= markdown @landing_page.commentary if @landing_page.commentary %>
+            <p class="author text-right"><i>by <%= link_to "Dave Laird @kiwiupover", "http://twitter.com/kiwiupover" %></i></p>
+          </div>
       </div>
     </div>
     

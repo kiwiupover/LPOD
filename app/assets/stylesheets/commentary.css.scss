@@ -1,0 +1,13 @@
+@import "config";   
+
+.commentary {
+	p {
+		font-size:14px;
+		line-height:1.3;
+		.author {
+			text-align:right; 
+			font-size:12px;
+		}
+	}
+	
+}
