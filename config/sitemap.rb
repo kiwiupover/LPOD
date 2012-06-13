@@ -24,4 +24,8 @@ SitemapGenerator::Sitemap.create do
   LandingPage.find_each do |lp|
     add landing_page_path(lp), :lastmod => lp.release_date
   end
+  
+  Industry.find_each do |i| 
+    add industry_path(i)
+  end
 end
