@@ -34,6 +34,8 @@ gem 'heroku'
 gem 'taps'
 
 gem 'pry-rails'
+
+gem 'sitemap_generator'
                
 gem 'meta-tags', :require => 'meta_tags'
 
