@@ -21,8 +21,6 @@ gem 'jquery-rails'
 
 gem 'simple_form'  
 
-gem 'newrelic_rpm'
-
 gem 'imgkit'
 gem "rmagick"
 gem 'carrierwave'
