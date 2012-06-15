@@ -148,6 +148,8 @@ GEM
     ntlm-http (0.1.1)
     pg (0.12.2)
     polyglot (0.3.3)
+    pony (1.4)
+      mail (> 2.0)
     pry (0.9.8.2)
       coderay (~> 1.0.5)
       method_source (~> 0.7)
@@ -208,6 +210,9 @@ GEM
       ffi (~> 1.0.9)
       multi_json (~> 1.0.4)
       rubyzip
+    semrush (3.0.3)
+      activesupport (~> 3.2.0)
+      pony (>= 1.0.0)
     sequel (3.20.0)
     simple_form (2.0.1)
       actionpack (~> 3.0)
@@ -284,6 +289,7 @@ DEPENDENCIES
   rmagick
   rspec-rails
   sass-rails (~> 3.2.3)
+  semrush
   simple_form
   sitemap_generator
   spork (> 0.9.0.rc)

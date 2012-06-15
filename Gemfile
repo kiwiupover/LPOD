@@ -21,6 +21,8 @@ gem 'jquery-rails'
 
 gem 'simple_form'  
 
+gem 'semrush'
+
 gem 'imgkit'
 gem "rmagick"
 gem 'carrierwave'
