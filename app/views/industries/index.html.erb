@@ -4,7 +4,7 @@
   <% @industries.each do |industry| %>
       <h3><%= link_to industry.name, industry %></h3>
       <ul class="block-grid four-up">
-        <% industry.landing_pages.not_future.take(4).each do |landing_page| %>
+        <% industry.landing_pages.not_future.default.take(4).each do |landing_page| %>
             <li class="inpad smallbox">
               <div class="date">
                 <%= landing_page.release_date.to_date().to_formatted_s(:rfc822)  %>

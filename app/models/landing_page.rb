@@ -28,7 +28,7 @@ class LandingPage < ActiveRecord::Base
   
   scope :next, lambda { |current| where('release_date > ?', current).order("release_date ASC")} 
 
-  scope :feed, limit(20).not_future.default
+  scope :feed, limit(30).not_future.default
   
   extend FriendlyId
 
