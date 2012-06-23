@@ -21,7 +21,7 @@ gem 'jquery-rails'
 
 gem 'simple_form'  
 
-gem 'semrush'
+gem 'semrush', :git => 'git://github.com/weboglobin/semrush.git'
 
 gem 'imgkit'
 gem "rmagick"
