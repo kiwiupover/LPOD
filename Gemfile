@@ -53,7 +53,9 @@ gem 'delayed_job_active_record'
 gem 'daemons' 
 gem "delayed_job_web" 
 
-gem 'pg'
+gem 'pg'  
+gem 'activerecord-postgres-hstore'
+
 gem 'thin'  
   
 
