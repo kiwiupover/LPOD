@@ -38,7 +38,7 @@
             <%= list_item(@landing_page.google_ppc_keywords, "Number of Google PPC Keywords")%>
             <%= list_item(@landing_page.alexa_rating, "Alexa Rating")%>  
           </ul> 
-          <% if @landing_page.commentary %>
+          <% unless @landing_page.commentary.blank? %>
             <div class="commentary">
               <h4>Commentary</h4>
               <%= markdown @landing_page.commentary if @landing_page.commentary %>
