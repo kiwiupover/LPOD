@@ -136,7 +136,7 @@ GEM
     meta-tags (1.2.6)
       actionpack
     method_source (0.7.0)
-    mime-types (1.18)
+    mime-types (1.19)
     multi_json (1.0.4)
     net-http-digest_auth (1.2)
     net-http-persistent (2.3.3)
