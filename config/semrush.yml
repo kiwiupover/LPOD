@@ -1,0 +1,8 @@
+production:
+  SEMRUSH: 538c25a7a6a42fe730ad3c623b697fed
+   
+development:
+  SEMRUSH: 538c25a7a6a42fe730ad3c623b697fed
+   
+test:
+  SEMRUSH: 538c25a7a6a42fe730ad3c623b697fed

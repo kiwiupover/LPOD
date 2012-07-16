@@ -4,8 +4,8 @@ CarrierWave.configure do |config|
   
   config.fog_credentials = {
       :provider               => 'AWS',       # required
-      :aws_access_key_id      => AWS[Rails.env]['S3KEY'],       # required
-      :aws_secret_access_key  => AWS[Rails.env]['S3SEC']       # required
+      :aws_access_key_id      => ENV['S3KEY'],       # required
+      :aws_secret_access_key  => ENV['S3SEC']       # required
       #:region                 => 'us-west-1'  # optional, defaults to 'us-east-1'
   }
   config.fog_directory  = 'lpod'                     # required
