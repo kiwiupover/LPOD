@@ -5,3 +5,4 @@ tmp/
 .sass-cache/
 config/s3.yml
 public/uploads/
+.DS_Store
