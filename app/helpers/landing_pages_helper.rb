@@ -6,41 +6,41 @@ module LandingPagesHelper
       "odd"
     end
   end
-  
+
   def description_tag(description)
     if description
       description
     else
-      "Landing pages are the destination of a web search. Landing pages from a wide varity of industries." 
-    end
-  end 
-  
-  def page_one?
-    if (params[:page].nil? || params[:page] <= "1") 
-      true 
+      "Landing pages are the destination of a web search. Landing pages from a wide varity of industries."
     end
   end
-  
+
+  def page_one?
+    if (params[:page].nil? || params[:page] <= "1")
+      true
+    end
+  end
+
   def format_date(date, format = :rfc822 )
     content_tag :div, :class => 'date' do
       date.to_date().to_formatted_s(format)
     end unless date.nil?
   end
-  
+
   def list_item(item, title)
     content_tag :li do
       @output = content_tag :span, "#{title}: ", :class => "#{title.gsub(' ', '-').downcase}"
       @output << item.titlecase
     end unless item.blank?
   end
-  
+
   def list_title_with_link(item, title, url)
     content_tag :li do
       @output = content_tag :span, "#{title}: ", :class => "#{title.gsub(' ', '-').downcase}"
       @output << link_to(item, url, :target => "_blank")
     end unless item.blank?
   end
-  
+
   def cost_per_click(keyword_cpc)
     keyword_cpc = keyword_cpc.gsub("$","")
     content_tag :li, :class => "cpc" do
@@ -48,13 +48,13 @@ module LandingPagesHelper
       @output << "$#{keyword_cpc}"
     end unless keyword_cpc.nil?
   end
-  
+
   def like_button(landing_page)
     content_tag :li do
       link_to landing_page.score, {:controller => "landing_pages", :action => "vote", :id => landing_page}, :class => "vote add", :remote => true
     end
   end
-  
+
   def sidebar_lp(page, klass)
     if page
       content_tag :li, :class => klass do
@@ -66,13 +66,13 @@ module LandingPagesHelper
         image_tag 'group-end.png', :class => "border end-lp"
       end
     end
-    
+
   end
-   
+
   def append_advert_link(link)
     link + "?ref=kiwiupover"
   end
-  
+
   def lp_thumbs(category, prev_lp, next_lp)
     if prev_lp || next_lp
      @output = content_tag(:h4, "<span>More:</span> #{category.name} Pages".html_safe , :class => "more")
@@ -82,21 +82,21 @@ module LandingPagesHelper
      @output << "</ul>".html_safe
     end
   end
-  
- def smallbox(landing_page) 
+
+ def smallbox(landing_page)
    content_tag :li, :class => "inpad smallbox" do
      concat format_date(landing_page.release_date)
      concat link_to image_tag(landing_page.screen_shot.thumb.url, :class => "border"), landing_page
      concat content_tag(:h4, (link_to landing_page.title), landing_page)
    end
  end
- 
+
  def logout
    link_to "Log Out", logout_path
  end
- 
+
  def login
    link_to "Log In", login_path
  end
- 
+
 end
