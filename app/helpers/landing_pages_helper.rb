@@ -34,6 +34,13 @@ module LandingPagesHelper
     end unless item.blank?
   end
   
+  def list_title_with_link(item, title, url)
+    content_tag :li do
+      @output = content_tag :span, "#{title}: ", :class => "#{title.gsub(' ', '-').downcase}"
+      @output << link_to(item, url, :target => "_blank")
+    end unless item.blank?
+  end
+  
   def cost_per_click(keyword_cpc)
     keyword_cpc = keyword_cpc.gsub("$","")
     content_tag :li, :class => "cpc" do

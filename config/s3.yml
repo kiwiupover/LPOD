@@ -1,0 +1,14 @@
+production:
+  S3KEY: AKIAJSI5ZUH4MG3WLMFQ
+  S3SEC: nrgb1f9s8J/fbhFaqvEwFkeI/d7GcnglbCvIW3jc
+  bucket: lpod
+  
+development:
+  S3KEY: AKIAJSI5ZUH4MG3WLMFQ
+  S3SEC: nrgb1f9s8J/fbhFaqvEwFkeI/d7GcnglbCvIW3jc
+  bucket: lpod
+  
+test:
+  S3KEY: AKIAJSI5ZUH4MG3WLMFQ
+  S3SEC: nrgb1f9s8J/fbhFaqvEwFkeI/d7GcnglbCvIW3jc
+  bucket: lpod
