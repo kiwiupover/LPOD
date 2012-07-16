@@ -30,7 +30,7 @@ module LandingPagesHelper
   def list_item(item, title)
     content_tag :li do
       @output = content_tag :span, "#{title}: ", :class => "#{title.gsub(' ', '-').downcase}"
-      @output << item
+      @output << item.titlecase
     end unless item.blank?
   end
   

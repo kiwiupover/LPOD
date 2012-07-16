@@ -64,7 +64,7 @@ $ft_color:						#cccccc;
 	background-image: -ms-linear-gradient(		 left, $color1 0%, $color2 100%);
 	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr="#{$color1}", endColorstr="#{$color2}",GradientType=1 );
 }
-@mixin gradiant($color1: #af2d01, $color2: #700402) {
+@mixin gradient($color1: #af2d01, $color2: #700402) {
 	background: $color1;
 	background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, $color1), color-stop(100%, $color2));
 	background-image: linear-gradient(				 top, $color1 0%, $color2 100%);
@@ -74,7 +74,7 @@ $ft_color:						#cccccc;
 	background-image: -ms-linear-gradient(		 top, $color1 0%, $color2 100%);
 	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr="#{$color1}", endColorstr="#{$color2}",GradientType=0 );
 }
-@mixin gradiant_top($color1: #af2d01, $color2: #700402) {
+@mixin gradient_top($color1: #af2d01, $color2: #700402) {
 	background: $color1;
 	background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, $color1), color-stop(100%, $color2));
 	background-image: linear-gradient(				 top, $color1 0%, $color2 100%);
@@ -84,6 +84,16 @@ $ft_color:						#cccccc;
 	background-image: -ms-linear-gradient(		 top, $color1 0%, $color2 100%);
 	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr="#{$color1}", endColorstr="#{$color2}",GradientType=0 );
 }  
+@mixin gradient_invisible($color1: #af2d01, $color2: #700402) {
+	background: $color1;
+	background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, $color1), color-stop(50%, $color2));
+	background-image: linear-gradient(				 top, $color1 0%, $color2 50%);
+	background-image: -o-linear-gradient(			 top, $color1 0%, $color2 50%);
+	background-image: -moz-linear-gradient(		 top, $color1 0%, $color2 50%);
+	background-image: -webkit-linear-gradient( top, $color1 0%, $color2 50%);
+	background-image: -ms-linear-gradient(		 top, $color1 0%, $color2 50%);
+	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr="#{$color1}", endColorstr="#{$color2}",GradientType=0 );
+}
 @mixin textshadow(){
 	text-shadow: 0 1px rgba(0,0,0,0.4);
 }
