@@ -7,4 +7,5 @@ config/s3.yml
 config/semrush.yml
 public/uploads/
 .DS_Store
+push_*
 
