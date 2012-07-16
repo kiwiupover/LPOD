@@ -3,9 +3,9 @@
 class ScreenshotUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
-  include CarrierWave::RMagick
-  include Magick
-  # include CarrierWave::MiniMagick
+  # include CarrierWave::RMagick
+  # include Magick
+  include CarrierWave::MiniMagick
   
   # Choose what kind of storage to use for this uploader:
   # storage :file 
@@ -31,16 +31,36 @@ class ScreenshotUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :bigthumb do
-    process :resize_to_fill => [1140, 600, Magick::NorthWestGravity]
+    process :resize_to_fill => [1140, 600, gravity='NorthWest']
   end  
   
   version :thumb do
-    process :resize_to_fill => [468,335, Magick::NorthWestGravity]
+    process :resize_to_fill => [468,335, gravity='NorthWest']
   end
   
   version :smallthumb do
-    process :resize_to_fill => [115,110, Magick::NorthWestGravity]
-  end 
+    process :resize_to_fill => [115,110, gravity='NorthWest']
+  end
+  
+  # def resize_to_fill(width, height, gravity='Center')
+  #   process :resize_to_fill => [width, height, gravity]
+  # end
+  
+  # version :bigthumb do
+  #   process :resize_to_fill => [1140, 600, Magick::NorthWestGravity]
+  # end  
+  # 
+  # def resize_to_fill(width, height, gravity='Center')
+  #   process :resize_to_fill => [width, height, gravity]
+  # end
+  # 
+  # version :thumb do
+  #   process :resize_to_fill => [468,335, Magick::NorthWestGravity]
+  # end
+  # 
+  # version :smallthumb do
+  #   process :resize_to_fill => [115,110, Magick::NorthWestGravity]
+  # end 
   
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:

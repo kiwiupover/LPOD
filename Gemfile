@@ -24,7 +24,8 @@ gem 'simple_form'
 gem 'semrush'
 
 gem 'imgkit'
-gem "rmagick"
+# gem "rmagick"
+gem "mini_magick"
 gem 'carrierwave'
 
 gem 'redcarpet' 
