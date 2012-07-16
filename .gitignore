@@ -4,6 +4,7 @@ log/*.log
 tmp/
 .sass-cache/
 config/s3.yml
+config/semrush.yml
 public/uploads/
 .DS_Store
 
