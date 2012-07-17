@@ -83,4 +83,7 @@ group :test do
   gem "guard-rspec"
   gem "spork", "> 0.9.0.rc"
   gem "guard-spork"
+  gem 'launchy' 
+  gem 'vcr'
+  gem 'webmock', '~>1.8.0'
 end
