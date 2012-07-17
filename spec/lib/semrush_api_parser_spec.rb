@@ -3,7 +3,7 @@ require 'vcr'
 require 'vcr_helper' 
 
 
-describe UrlCrawler do
+describe SemRush do
   let(:url) { "http://doulajen.com" }
   subject { UrlCrawler.new(url) }
   
