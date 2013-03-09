@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/weboglobin/semrush.git
+  revision: 7697ee68aa48f69014bc7dcc05a68a82c809f88f
+  specs:
+    semrush (3.0.6)
+      activesupport (~> 3.2.0)
+      pony (>= 1.0.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -211,9 +219,6 @@ GEM
       ffi (~> 1.0.9)
       multi_json (~> 1.0.4)
       rubyzip
-    semrush (3.0.3)
-      activesupport (~> 3.2.0)
-      pony (>= 1.0.0)
     sequel (3.20.0)
     simple_form (2.0.1)
       actionpack (~> 3.0)
@@ -291,7 +296,7 @@ DEPENDENCIES
   redcarpet
   rspec-rails
   sass-rails (~> 3.2.3)
-  semrush
+  semrush!
   simple_form
   sitemap_generator
   spork (> 0.9.0.rc)
